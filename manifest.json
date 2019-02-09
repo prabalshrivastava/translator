@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+
+  "name": "language translator",
+  "description": "Translate to Different Language",
+  "version": "1.0.0",
+  "options_page": "options.html",  
+  "icons": { "128" : "icon_128.png" },
+  "browser_action" : {
+    "default_icon" : "icon.png",
+    "default_popup" : "popup.html",
+    "default_title" : "A text translator for chrome"
+  },
+  "permissions": ["activeTab", "declarativeContent", "storage"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],	
+      "js": ["content.js"]
+  	}
+  ],
+  "background" : {
+    "scripts" : ["background.js"]
+  }
+}
